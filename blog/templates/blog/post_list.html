@@ -4,12 +4,17 @@
 	</head>
 	<body>
 		<div>
-			<h1>Blod de la Jordina</h1>
+			<h1>Blog de la Jordina</h1>
 		</div>
+
 		<div>
-			<p>Publicación</p>
-			<h2>Título Post 1</h2>
-			<p>Texto</p>
+			{% for post in posts %}
+				<div>
+					<p>Publicado: {{ post.published_date }}</p>
+					<h2>{{ post.title }}</h2>
+					<p>{{ post.text|linebreaks }}</p>
+				</div>
+			{% endfor %}
 		</div>
 	</body>
 </html>
